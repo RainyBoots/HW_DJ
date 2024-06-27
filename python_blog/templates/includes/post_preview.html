@@ -1,0 +1,9 @@
+<div>
+    <div class="card w-100 mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text text-truncate">{{ post.text }}</p>
+          <a href="{% url "blog_page" post.slug %}" class="card-link">Ссылка карточки</a>
+        </div>
+    </div>
+</div>
