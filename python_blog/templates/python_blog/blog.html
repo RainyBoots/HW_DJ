@@ -5,9 +5,25 @@
 <h1>Это блог</h1>
 <form class="d-flex mb-4" role="search">
     <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-    <button class="btn btn-outline-success" type="submit">Поиск</button>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="search_in_title" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Заголовок</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="search_in_text" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Текст</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="search_in_tag" value="option3">
+        <label class="form-check-label" for="inlineCheckbox3">Теги</label>
+    </div>
+    <button class="btn btn-dark" type="submit">Поиск</button>
 </form>
-{% for post in posts %}
-{% include 'includes/post_preview.html' %}
-{% endfor %}
+<div class="row">
+    {% for post in posts %}
+        <div>
+            {% include 'includes/post_preview.html' %}
+        </div>
+    {% endfor %}
+</div>
 {% endblock  %}
