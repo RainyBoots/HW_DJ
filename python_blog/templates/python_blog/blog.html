@@ -1,21 +1,24 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Блог{% endblock  %}
-{% block head %}{% endblock  %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+{% endblock  %}
 {% block content %}
 <h1>Это блог</h1>
 <form class="d-flex mb-4" role="search">
-    <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+    <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search" name="search">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="search_in_title" value="option1">
-        <label class="form-check-label" for="inlineCheckbox1">Заголовок</label>
+        <input class="form-check-input" type="checkbox" id="searchInTitle" name="search_in_title" value="option1">
+        <label class="form-check-label" for="searchInTitle">Заголовок</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="search_in_text" value="option2">
-        <label class="form-check-label" for="inlineCheckbox2">Текст</label>
+        <input class="form-check-input" type="checkbox" id="searchInText" name="search_in_text" value="option2">
+        <label class="form-check-label" for="searchInText">Текст</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="search_in_tag" value="option3">
-        <label class="form-check-label" for="inlineCheckbox3">Теги</label>
+        <input class="form-check-input" type="checkbox" id="searchInTag" name="search_in_tag" value="option3">
+        <label class="form-check-label" for="searchInTag">Теги</label>
     </div>
     <button class="btn btn-dark" type="submit">Поиск</button>
 </form>
