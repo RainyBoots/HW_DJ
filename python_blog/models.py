@@ -22,7 +22,7 @@ class Post(models.Model):
         return f'{self.title}: {self.slug}'
 
     def get_absolute_url(self):
-        return f'/post/{self.slug}/'
+        return f'/blog/{self.slug}/'
 
 
 # Create your models here.

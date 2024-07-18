@@ -2,8 +2,8 @@ from re import search
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from django.template import context
-
-
+from django.shortcuts import get_object_or_404
+from .models import Post
 menu = [
     {
         "name": "Главная",
@@ -92,6 +92,7 @@ def about(request):
 
 def blog(request):
     if request.method == "GET":
+        posts = Post.objects.all()
         search = request.GET.get("search")
         search_in_title = request.GET.get("searchInTitle")
         search_in_text = request.GET.get("searchInText")
@@ -139,7 +140,7 @@ def blog(request):
 
 
 def blog_page(request, slug):
-    post = next(post for post in posts if post.get("slug") == slug)
+    post = get_object_or_404(Post, slug=slug)
     context = {'post': post,
                'menu': menu}
     return render(request, 'python_blog/post_detail.html', context=context)
