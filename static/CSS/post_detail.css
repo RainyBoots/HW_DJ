@@ -1,0 +1,43 @@
+.tags .tag {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 5px; 
+    display: inline-block; 
+}
+
+
+.tag {
+    margin: 0 5px;
+}
+
+.tag-link {
+    text-decoration: none; 
+    background-color: #55606b; 
+    color: #fff; 
+    font-family: monospace;
+}
+
+.tag-link:hover {
+    background-color: #343a40; 
+    transition: background-color 1.9s; 
+}
+
+.card-body,
+.card-text,
+.list-group-item {
+    text-align: left; 
+}
+
+.cat-link {
+    text-decoration: none; 
+    color: black; 
+    font-family: monospace;
+    background-color: white; 
+
+}
+
+.cat-link:hover{
+    background-color: blanchedalmond; 
+    transition: background-color 0.5s;
+    border-radius: 5px;
+}

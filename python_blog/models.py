@@ -9,12 +9,13 @@ class Post(models.Model):
     text = models.TextField()
     slug = models.SlugField(unique=True)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    tags = models.JSONField(null=True, blank=True, default=list)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="posts", null=True, default=None)
+    tags = models.ManyToManyField("Tag", related_name="posts")
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     
     def save(self, *args, **kwargs):
-        if not self.slug:
+        if not self.slug or self.slug == '':
             self.slug = slugify(unidecode(self.title))
         super().save(*args, **kwargs)
 
@@ -25,4 +26,49 @@ class Post(models.Model):
         return f'/blog/{self.slug}/'
 
 
-# Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(unique=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.slug or self.slug == '':
+            self.slug = slugify(unidecode(self.name))
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return f'/blog/category/{self.slug}/'
+
+class Tag(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(unique=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.slug or self.slug == '':
+            self.slug = slugify(unidecode(self.name))
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return f'/blog/tag/{self.slug}/'
+
+class Comment(models.Model):
+    STATUS_CHOICES = [
+        ("checked", "Проверен"),
+        ("unchecked", "Не проверен"),
+    ]
+    
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    text = models.TextField()
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="unchecked")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    
+    def __str__(self):
+        return f'{self.author}: {self.status}'
+
+
