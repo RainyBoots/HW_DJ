@@ -1,5 +1,18 @@
 [
 {
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-07-26T19:33:09.576Z",
+    "user": 3,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Основы Python: osnovy-python",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Text\"]}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -360,6 +373,60 @@
   }
 },
 {
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$Mn0YVo867GpYrrdhcuUkw0$0VqG6GAj0X+iD4ZcoS7AjNsdqcuw4y+CPgdBhbj2yYU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-26T19:27:14.153Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$NpczPypzqUbivg1LBiALiT$GKa3UU+fQK+m7/JDuTJWLAdXE0qQVjZge3Ge+7hsUjc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-26T19:27:19.270Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$jqtqXfbvtclWYFQyLFaEUe$qm2bTJf0r9G4zEJi+QUUqXYbbYv4cyVo27hjTdYRTKk=",
+    "last_login": "2024-07-26T19:32:10.888Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "ad@ad.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-07-26T19:31:47.549Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
   "model": "contenttypes.contenttype",
   "pk": 1,
   "fields": {
@@ -437,6 +504,219 @@
   "fields": {
     "app_label": "python_blog",
     "model": "comment"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "fdpltgaptb6v1iolpjk4azobwg5jjcjq",
+  "fields": {
+    "session_data": ".eJxVjMEOwiAQRP-FsyEICwWP3v0GsrCsVA1NSnsy_rtt0oPOcd6beYuI61Lj2sscRxIXYcTpt0uYn6XtgB7Y7pPMU1vmMcldkQft8jZReV0P9--gYq_bugSLmTWcnckuhcEqYAtKh8yIoIkHtspASj4TeMccnHdGcyhk7Bbx-QLlFTfA:1sXQfi:H4tWGHbbYn_XUY0XpBe5I4mJG79DxOJai18_GbR6_ic",
+    "expire_date": "2024-08-09T19:32:10.901Z"
+  }
+},
+{
+  "model": "python_blog.post",
+  "pk": 1,
+  "fields": {
+    "title": "Основы Python",
+    "text": "Изучаем основы Python.\r\n![Кот](/media/images/1.jpg)",
+    "slug": "osnovy-python",
+    "author": 1,
+    "category": 1,
+    "published_date": "2024-07-26T19:27:27.653Z",
+    "updated_date": "2024-07-26T19:33:09.570Z",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "python_blog.post",
+  "pk": 2,
+  "fields": {
+    "title": "Введение в Django",
+    "text": "Начало работы с Django.",
+    "slug": "vvedenie-v-django",
+    "author": 1,
+    "category": 2,
+    "published_date": "2024-07-26T19:28:26.512Z",
+    "updated_date": "2024-07-26T19:28:26.512Z",
+    "tags": [
+      2,
+      8
+    ]
+  }
+},
+{
+  "model": "python_blog.post",
+  "pk": 3,
+  "fields": {
+    "title": "Работа с базами данных",
+    "text": "Как работать с базами данных в Python.",
+    "slug": "rabota-s-bazami-dannykh",
+    "author": 1,
+    "category": 3,
+    "published_date": "2024-07-26T19:28:41.731Z",
+    "updated_date": "2024-07-26T19:28:41.731Z",
+    "tags": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "python_blog.post",
+  "pk": 4,
+  "fields": {
+    "title": "Изучаем Flask",
+    "text": "Основы Flask.",
+    "slug": "izuchaem-flask",
+    "author": 2,
+    "category": 1,
+    "published_date": "2024-07-26T19:28:57.698Z",
+    "updated_date": "2024-07-26T19:28:57.698Z",
+    "tags": [
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "python_blog.post",
+  "pk": 5,
+  "fields": {
+    "title": "HTML и CSS",
+    "text": "Создание веб-страниц с использованием HTML и CSS.",
+    "slug": "html-i-css",
+    "author": 2,
+    "category": 2,
+    "published_date": "2024-07-26T19:29:14.077Z",
+    "updated_date": "2024-07-26T19:29:14.077Z",
+    "tags": [
+      8,
+      9
+    ]
+  }
+},
+{
+  "model": "python_blog.post",
+  "pk": 6,
+  "fields": {
+    "title": "Работа с PostgreSQL",
+    "text": "Настройка и использование PostgreSQL.",
+    "slug": "rabota-s-postgresql",
+    "author": 2,
+    "category": 3,
+    "published_date": "2024-07-26T19:29:32.941Z",
+    "updated_date": "2024-07-26T19:29:32.941Z",
+    "tags": [
+      6
+    ]
+  }
+},
+{
+  "model": "python_blog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Программирование",
+    "slug": "programmirovanie"
+  }
+},
+{
+  "model": "python_blog.category",
+  "pk": 2,
+  "fields": {
+    "name": "Веб-разработка",
+    "slug": "veb-razrabotka"
+  }
+},
+{
+  "model": "python_blog.category",
+  "pk": 3,
+  "fields": {
+    "name": "Базы данных",
+    "slug": "bazy-dannykh"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Python",
+    "slug": "python"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Django",
+    "slug": "django"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Flask",
+    "slug": "flask"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 4,
+  "fields": {
+    "name": "SQL",
+    "slug": "sql"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 5,
+  "fields": {
+    "name": "SQLite",
+    "slug": "sqlite"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 6,
+  "fields": {
+    "name": "PostgreSQL",
+    "slug": "postgresql"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 7,
+  "fields": {
+    "name": "JavaScript",
+    "slug": "javascript"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 8,
+  "fields": {
+    "name": "HTML",
+    "slug": "html"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 9,
+  "fields": {
+    "name": "CSS",
+    "slug": "css"
+  }
+},
+{
+  "model": "python_blog.tag",
+  "pk": 10,
+  "fields": {
+    "name": "Bootstrap 5",
+    "slug": "bootstrap-5"
   }
 }
 ]
