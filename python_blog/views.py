@@ -84,7 +84,8 @@ def post_detail(request, slug):
         post.save(update_fields=['views'])
         request.session['viewed_posts'].append(slug)  
         request.session.modified = True
-              
+    
+        post.refresh_from_db()
     return render(request, 'python_blog/post_detail.html', context=context)
 
 
