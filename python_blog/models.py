@@ -11,6 +11,7 @@ class Post(models.Model):
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="posts", null=True, default=None)
     tags = models.ManyToManyField("Tag", related_name="posts")
+    views = models.PositiveIntegerField(default=0)
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     
